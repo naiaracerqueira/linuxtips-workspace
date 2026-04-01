@@ -1,7 +1,3 @@
-# onboarding-welcome
-
-_Exportado em 01/04/2026_
-
 ## Linux
 
 ### Conceitos
