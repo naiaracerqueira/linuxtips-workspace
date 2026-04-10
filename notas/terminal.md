@@ -3,6 +3,11 @@
 - Shell: interpretador de comandos, conversa com o kernel
 - Bash: um tipo de shell.
 - FHS: Filesystem Hierarchy Standard
+- Montar: disponibilizar para uso
+- PID: Process identification, id de cada processo em execução. Para ver os processos:
+```
+ps -ef
+```
 
 ## Comandos
 
@@ -25,6 +30,7 @@
 | > | Append |
 | tree | Ver a estrturura de diretórios até o / |
 | history | Ver histórico de comandos |
+| cat | Visualizar conteúdo do arquivo |
 
 O comando `ls -lha` retorna:
 ```
@@ -74,11 +80,19 @@ lrwxrwxrwx  1 root root       22 Oct 24 03:46  zoom -> /opt/zoom/ZoomLauncher
 | /root	| Diretório do usuário administrador do sistema |
 | /home	| Diretório dos outros usuários |
 | /dev	| Dispositivos (magenta) que podem ser de caractere (transferem informações) ou de bloco (armazenam informações) e diretório (azul escuro) |
-| /etc	| Configuração do |
-| /lib	| Bibliotecas do sistema|
+| /etc	| Configuração do sistema |
+| /lib	| Bibliotecas do sistema (*.so) |
+| /lib/modules | Módulos do kernel |
 | /var	| |
 | /var/log | Arquivos de log do sistema |
-| / | |
+| /media | Tipo USB, CD-ROM |
+| /opt | Instalações que não fazem parte da distribuição por default |
+| /proc | Informações dinâmicas sobre o sistema. Pastas numéricas se referem aos PIDs |
+| /run | Informações sobre processos em execução |
+| /sbin | Binários que somente o root (s = super) pode usar |
+| /sys | Informações dinâmicas sobre o kernel |
+| /tmp | Diretório temporário (apaga no reboot) |
+| /usr | Diretório com diretórios similares ao do raiz, mas de uso universal (todos os usuários) |
 
 ## Administração de usuários
 
