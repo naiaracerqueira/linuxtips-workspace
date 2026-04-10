@@ -96,9 +96,12 @@ lrwxrwxrwx  1 root root       22 Oct 24 03:46  zoom -> /opt/zoom/ZoomLauncher
 | tar -v | Verboso |
 | tar -c | Cria um pacote |
 | tar -czf *path_arquivo.tar.gz* *diretorio_a_ser_compactado* | Compacta e comprime o diretório |
-| tar -t | Visualiza um pacote |
+| tar -t | Visualiza conteúdo do pacote |
 | tar -tzf *arquivo.tar.gz* | Ver conteúdo do arquivo |
 | tar -x | Descompacta |
+| tar -xzf *arquivo.tar.gz* | Descompacta o arquivo |
+| gzip | Compacta projetos |
+| gzip -d | Descompata projetos |
 
 ## Atalhos
 
