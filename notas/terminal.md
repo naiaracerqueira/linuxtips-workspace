@@ -13,6 +13,7 @@ ps -ef
 
 | Comando | Obs |
 | -- | -- |
+| clear | Apaga os comandos, *ctrl+l* |
 | ls | Lista diretórios e arquivos |
 | ls -l | Detalhes de tamanho e permissão |
 | ls -a | Aquivos ocultos |
@@ -24,13 +25,26 @@ ps -ef
 | cd ../../ | Caminho relativo: volta dois níveis de diretório |
 | cd - | Volta para o diretório anterior |
 | cat | Visualiza conteudo do arquivo |
-| mkdir | Cria pasta |
+| mkdir | "Make directory", cria diretório |
+| mkdir -p | Cria diretório encadeado |
+| cp *origem* *destino* | Copia arquivo |
+| cp -r *origem* *destino* | Copia diretório |
+| mv *origem* *destino* | Move arquivo |
+| mv -r *origem* *destino* | Move diretório |
+| mv *nome inicial* *nome final* | Renomeia arquivo |
+| rm *nome do arquivo* | Remove arquivo |
+| rm -r *nome do diretório* | Remove diretório de forma recursiva |
+| rm -f *nome do diretório* | Força remoção de diretório |
+| touch | Cria arquivo vazio |
 | echo | Imprime na tela o que eu mando |
-| >> | Altera saída padrão para |
+| >> | Altera (sobrescreve) saída padrão para |
 | > | Append |
 | tree | Ver a estrturura de diretórios até o / |
 | history | Ver histórico de comandos |
 | cat | Visualizar conteúdo do arquivo |
+| source | Lê alguns arquivos específicos |
+| alias | Lista todos os apelidos |
+| alias *apelido*='*comando*' | Dá um apelido X para um comando. Ex: alias ll='ls -lha' |
 
 O comando `ls -lha` retorna:
 ```
@@ -61,6 +75,18 @@ lrwxrwxrwx  1 root root       22 Oct 24 03:46  zoom -> /opt/zoom/ZoomLauncher
 - rwx → permissões dos outros: read, write, execute
 - zoom -> /opt/zoom/ZoomLauncher → é o link simbólico que aponta para o opt/zoom/
 
+## Atalhos
+
+| Atalho | Obs |
+| -- | -- |
+| ctrl+l | Apaga os comandos |
+| ctrl+r | Busca no histórico de comandos |
+| ctrl+w | Remove ultimo bloco de comando de um comando já digitado |
+| ctrl+d | Fecha o terminal |
+| ctrl+a | Vai para início do comando |
+| ctrl+e | Vai para final do comando |
+| ctrl+c | Para comando que está rodando |
+
 ## Diretórios Linux
 
 **Organização por níveis**
@@ -83,11 +109,11 @@ lrwxrwxrwx  1 root root       22 Oct 24 03:46  zoom -> /opt/zoom/ZoomLauncher
 | /etc	| Configuração do sistema |
 | /lib	| Bibliotecas do sistema (*.so) |
 | /lib/modules | Módulos do kernel |
-| /var	| |
+| /var	| Dados variáveis como logs, mensagens, impressão, cache, etc. |
 | /var/log | Arquivos de log do sistema |
 | /media | Tipo USB, CD-ROM |
 | /opt | Instalações que não fazem parte da distribuição por default |
-| /proc | Informações dinâmicas sobre o sistema. Pastas numéricas se referem aos PIDs |
+| /proc | Informações dinâmicas sobre o sistema; diretórios numéricas se referem aos PIDs |
 | /run | Informações sobre processos em execução |
 | /sbin | Binários que somente o root (s = super) pode usar |
 | /sys | Informações dinâmicas sobre o kernel |
@@ -111,4 +137,7 @@ $ touch /opt/projeto/config.yml
 $ chmod 750 /opt/projeto
 $ chown -R estudante:devops /opt/projeto
 ```
+
+## Manipulação de arquivos
+
 
