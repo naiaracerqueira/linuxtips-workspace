@@ -4,10 +4,7 @@
 - Bash: um tipo de shell.
 - FHS: Filesystem Hierarchy Standard
 - Montar: disponibilizar para uso
-- PID: Process identification, id de cada processo em execução. Para ver os processos:
-```
-ps -ef
-```
+- PID: Process identification, id de cada processo em execução.
 
 ## Comandos
 
@@ -18,31 +15,19 @@ ps -ef
 | ls -l | Detalhes de tamanho e permissão |
 | ls -a | Aquivos ocultos |
 | ls -h | "Human readable" |
+| ls -d *diretorio* | Apenas o diretório |
 | cwd | Mostra path |
 | cd | "Change directory" |
 | cd *dir* | Vai para diretório "dir" |
 | cd .. | Caminho relativo: volta um nível de diretório |
 | cd ../../ | Caminho relativo: volta dois níveis de diretório |
 | cd - | Volta para o diretório anterior |
-| cat | Visualiza conteudo do arquivo |
-| mkdir | "Make directory", cria diretório |
-| mkdir -p | Cria diretório encadeado |
-| cp *origem* *destino* | Copia arquivo |
-| cp -r *origem* *destino* | Copia diretório |
-| mv *origem* *destino* | Move arquivo |
-| mv -r *origem* *destino* | Move diretório |
-| mv *nome inicial* *nome final* | Renomeia arquivo |
-| rm *nome do arquivo* | Remove arquivo |
-| rm -r *nome do diretório* | Remove diretório de forma recursiva |
-| rm -f *nome do diretório* | Força remoção de diretório |
-| touch | Cria arquivo vazio |
 | echo | Imprime na tela o que eu mando |
 | >> | Altera (sobrescreve) saída padrão para |
 | > | Append |
 | tree | Ver a estrturura de diretórios até o / |
 | history | Ver histórico de comandos |
-| cat | Visualizar conteúdo do arquivo |
-| source | Lê alguns arquivos específicos |
+| ps -ef | Vê processos em execução e PIDs |
 | alias | Lista todos os apelidos |
 | alias *apelido*='*comando*' | Dá um apelido X para um comando. Ex: alias ll='ls -lha' |
 
@@ -74,6 +59,46 @@ lrwxrwxrwx  1 root root       22 Oct 24 03:46  zoom -> /opt/zoom/ZoomLauncher
 - rwx → permissões do grupo do dono do arquivo: read, write, execute
 - rwx → permissões dos outros: read, write, execute
 - zoom -> /opt/zoom/ZoomLauncher → é o link simbólico que aponta para o opt/zoom/
+
+## Manipulação de arquivos
+
+| Comando | Obs |
+| -- | -- |
+| ls *.csv | Lista os arquivos com extensão .csv |
+| ls arq-?.csv | Lista os arquivos com um caractere após 'arq-' no nome |
+| ls arq-[1,2,3].csv | Lista os arquivos com nome arq-1.csv, arq-3.csv ou arq-3.csv |
+| mkdir | "Make directory", cria diretório |
+| mkdir -p /A/B/C/ | Cria diretório encadeado |
+| cp *origem* *destino* | Copia arquivo |
+| cp -r *origem* *destino* | Copia diretório |
+| mv *origem* *destino* | Move arquivo |
+| mv -r *origem* *destino* | Move diretório |
+| mv *nome_inicial* *nome_final* | Renomeia arquivo |
+| rm *nome_arquivo* | Remove arquivo |
+| rm *nome_diretorio/** | Remove tudo dentro do diretório |
+| rm -r *nome_diretorio* | Remove diretório de forma recursiva |
+| rm -f *nome_diretorio* | Força remoção de diretório |
+| touch | Cria arquivo vazio |
+| touch arq-{1..10}.txt | Cria arquivos com nome arq-1.txt até o arq-10.txt |
+| find *diretorio* -name *nome* -type *tipo* | Encontra aquivo dentro do diretório de tipo diretorio (d), arquivo (f) |
+| find *diretorio* -type *tipo* -size *{+,-}tamanho* | Encontra aquivo de tamanho X (exemplo, +10k, para maiores de 10k) |
+| find *diretorio* -mtime *{+,-}dias* | Encontra aquivos modificados a X dias (exemplo, +20, para mais de 20 dias) |
+| find *diretorio* -iname *nome* -delete | Encontra aquivo com nome ignorando o case sensitive e o remove |
+| find *diretorio* -name *nome* -exec ls -lha | Encontra aquivo e executa o ls -lha |
+| cat | Visualizar conteúdo do arquivo |
+| source | Lê alguns arquivos específicos |
+
+**Empacotar e compactar**
+| Comando | Obs |
+| -- | -- |
+| tar -z | Compacta em formato *.gzip |
+| tar -f | Fica sempre no final, indica o arquivo que será criado |
+| tar -v | Verboso |
+| tar -c | Cria um pacote |
+| tar -czf *path_arquivo.tar.gz* *diretorio_a_ser_compactado* | Compacta e comprime o diretório |
+| tar -t | Visualiza um pacote |
+| tar -tzf *arquivo.tar.gz* | Ver conteúdo do arquivo |
+| tar -x | Descompacta |
 
 ## Atalhos
 
@@ -137,7 +162,3 @@ $ touch /opt/projeto/config.yml
 $ chmod 750 /opt/projeto
 $ chown -R estudante:devops /opt/projeto
 ```
-
-## Manipulação de arquivos
-
-
