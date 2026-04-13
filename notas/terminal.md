@@ -1,7 +1,9 @@
 # Terminal (Alpine)
 
-- Shell: interpretador de comandos, conversa com o kernel
-- Bash: um tipo de shell.
+- Shell: interpretador de comandos, conversa com o kernel. Tipos de shell:
+    - Bash
+    - ZSH
+    - Ohmyzsh
 - FHS: Filesystem Hierarchy Standard
 - Montar: disponibilizar para uso
 - PID: Process identification, id de cada processo em execução.
@@ -73,16 +75,16 @@ lrwxrwxrwx  1 root root       22 Oct 24 03:46  zoom -> /opt/zoom/ZoomLauncher
 | ls arq-?.csv | Lista os arquivos com um caractere após 'arq-' no nome |
 | ls arq-[1,2,3].csv | Lista os arquivos com nome arq-1.csv, arq-3.csv ou arq-3.csv |
 | mkdir | "Make directory", cria diretório |
-| mkdir -p /A/B/C/ | Cria diretório encadeado |
+| mkdir -p /A/B/C/ | Cria diretório encadeado começando pelo diretório pai |
 | cp *origem* *destino* | Copia arquivo |
 | cp -r *origem* *destino* | Copia diretório |
 | mv *origem* *destino* | Move arquivo |
 | mv -r *origem* *destino* | Move diretório |
 | mv *nome_inicial* *nome_final* | Renomeia arquivo |
 | rm *nome_arquivo* | Remove arquivo |
-| rm *nome_diretorio/** | Remove tudo dentro do diretório |
+| rm *nome_diretorio/** | Remove tudo dentro do diretório, mas não o diretório |
 | rm -r *nome_diretorio* | Remove diretório de forma recursiva |
-| rm -f *nome_diretorio* | Força remoção de diretório |
+| rm -f *nome_diretorio* | Força remoção de diretório (sem perguntar 'yes' no meio do caminho) |
 | touch | Cria arquivo vazio |
 | touch arq-{1..10}.txt | Cria arquivos com nome arq-1.txt até o arq-10.txt |
 | find *diretorio* -name *nome* -type *tipo* | Encontra aquivo dentro do diretório de tipo diretorio (d), arquivo (f) |
@@ -91,6 +93,7 @@ lrwxrwxrwx  1 root root       22 Oct 24 03:46  zoom -> /opt/zoom/ZoomLauncher
 | find *diretorio* -iname *nome* -delete | Encontra aquivo com nome ignorando o case sensitive e o remove |
 | find *diretorio* -name *nome* -exec ls -lha | Encontra aquivo e executa o ls -lha |
 | cat | Visualizar conteúdo do arquivo |
+| nano / vim | Abre conteúdo do arquivo |
 | source | Lê alguns arquivos específicos |
 | tail | Lê 10 últimas linhas do arquivo |
 
