@@ -95,7 +95,7 @@ lrwxrwxrwx  1 root root       22 Oct 24 03:46  zoom -> /opt/zoom/ZoomLauncher
 | cat | Visualizar conteúdo do arquivo |
 | nano / vim | Abre conteúdo do arquivo |
 | source | Lê alguns arquivos específicos |
-| tail | Lê 10 últimas linhas do arquivo |
+| head / tail | Lê 10 primeiras / últimas linhas do arquivo |
 
 **Empacotar e compactar**
 | Comando | Obs |
@@ -146,12 +146,14 @@ lrwxrwxrwx  1 root root       22 Oct 24 03:46  zoom -> /opt/zoom/ZoomLauncher
 | /home	| Diretório dos outros usuários |
 | /lib	| Bibliotecas do sistema (*.so) |
 | /lib/modules | Módulos do kernel |
-| /media | Tipo USB, CD-ROM |
+| /media | Mídia removível, tipo USB, CD-ROM |
+| /mnt | Pontos de montagem temporários |
 | /opt | Instalações que não fazem parte da distribuição por default |
-| /proc | Informações dinâmicas sobre o sistema; diretórios numéricas se referem aos PIDs |
-| /root	| Diretório do usuário administrador do sistema |
-| /run | Informações sobre processos em execução |
+| /proc | Processos e infos do kernel; diretórios numéricas se referem aos PIDs |
+| /root	| Diretório do usuário administrador do sistema (root) |
+| /run | Informações sobre processos em execução (runtime) |
 | /sbin | Binários que somente o root (s = super) pode usar |
+| /srv | Dados de serviços |
 | /sys | Informações dinâmicas sobre o kernel |
 | /tmp | Diretório temporário (apaga no boot) |
 | /usr | Diretório com diretórios similares ao do raiz, mas de uso universal (todos os usuários) |
