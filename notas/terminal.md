@@ -6,15 +6,19 @@
 - Montar: disponibilizar para uso
 - PID: Process identification, id de cada processo em execução.
 
-## Comandos
+## Comandos básicos
 
 | Comando | Obs |
 | -- | -- |
+| sudo | Permissões do root por tempo limitado |
+| sudo su - | Assume como root |
+| exit | Sai do root |
 | clear | Apaga os comandos, *ctrl+l* |
 | ls | Lista diretórios e arquivos |
-| ls -l | Detalhes de tamanho e permissão |
-| ls -a | Aquivos ocultos |
-| ls -h | "Human readable" |
+| ls -l | "Large", mostra detalhes de tamanho e permissão |
+| ls -a | "All", todos os arquivos, inclusive os ocultos |
+| ls -h | "Human readable", formata tamanho |
+| ls -R | Recursivo, mostra tudo que tem dentro |
 | ls -d *diretorio* | Apenas o diretório |
 | cwd | Mostra path |
 | cd | "Change directory" |
@@ -30,6 +34,7 @@
 | ps -ef | Vê processos em execução e PIDs |
 | alias | Lista todos os apelidos |
 | alias *apelido*='*comando*' | Dá um apelido X para um comando. Ex: alias ll='ls -lha' |
+| free -m | Mostra memória do computador em megas (ou -g em gigas) |
 
 O comando `ls -lha` retorna:
 ```
@@ -37,18 +42,18 @@ drwxr-xr-x   4 root root 4.0K Apr  2 14:44 boot
 ```
 Que são
 - d → significa que é um diretório
-    - **\-** → arquivos de texto
+    - \- → arquivos de texto
     - l → link simbólico
     - b → dispositivo de bloco
     - c → dispositivo de caractere
     - s → socket
 - rwxr-xr-x → permissões
-- 4 → nível
-- root → usuário
-- root → grupo
-- 4.0K → tamanho do arquivo diretório
-- Apr  2 14:44 → data
-- boot → nome do diretório
+- 4 → nível naquele arquivo ou diretório, arquivo = 1
+- root → usuário dono do arquivo
+- root → grupo dono do arquivo
+- 4.0K → tamanho do arquivo diretório, originalmente em bytes (-h transforma)
+- Apr  2 14:44 → data de criação
+- boot → nome do diretório ou arquivo
 
 Ou
 ```
@@ -87,6 +92,7 @@ lrwxrwxrwx  1 root root       22 Oct 24 03:46  zoom -> /opt/zoom/ZoomLauncher
 | find *diretorio* -name *nome* -exec ls -lha | Encontra aquivo e executa o ls -lha |
 | cat | Visualizar conteúdo do arquivo |
 | source | Lê alguns arquivos específicos |
+| tail | Lê 10 últimas linhas do arquivo |
 
 **Empacotar e compactar**
 | Comando | Obs |
@@ -131,22 +137,23 @@ lrwxrwxrwx  1 root root       22 Oct 24 03:46  zoom -> /opt/zoom/ZoomLauncher
 | -- | -- |
 | /	| Diretório raiz |
 | /bin	| Binários: executáveis (verde) e link simbolicos / atalhos (azul claro) |
-| /root	| Diretório do usuário administrador do sistema |
+| /boot	| Arquivos de inicialização do sistema |
+| /dev	| Dispositivos que podem ser de caractere (transferem informações) ou de bloco (armazenam informações) e diretório |
+| /etc	| "Editable text configuration": configurações do sistema |
 | /home	| Diretório dos outros usuários |
-| /dev	| Dispositivos (magenta) que podem ser de caractere (transferem informações) ou de bloco (armazenam informações) e diretório (azul escuro) |
-| /etc	| Configuração do sistema |
 | /lib	| Bibliotecas do sistema (*.so) |
 | /lib/modules | Módulos do kernel |
-| /var	| Dados variáveis como logs, mensagens, impressão, cache, etc. |
-| /var/log | Arquivos de log do sistema |
 | /media | Tipo USB, CD-ROM |
 | /opt | Instalações que não fazem parte da distribuição por default |
 | /proc | Informações dinâmicas sobre o sistema; diretórios numéricas se referem aos PIDs |
+| /root	| Diretório do usuário administrador do sistema |
 | /run | Informações sobre processos em execução |
 | /sbin | Binários que somente o root (s = super) pode usar |
 | /sys | Informações dinâmicas sobre o kernel |
-| /tmp | Diretório temporário (apaga no reboot) |
+| /tmp | Diretório temporário (apaga no boot) |
 | /usr | Diretório com diretórios similares ao do raiz, mas de uso universal (todos os usuários) |
+| /var	| Dados variáveis como logs, mensagens, impressão, cache, etc. |
+| /var/log | Arquivos de log do sistema |
 
 ## Administração de usuários
 
