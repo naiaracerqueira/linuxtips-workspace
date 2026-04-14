@@ -1,5 +1,16 @@
-# Terminal (Alpine)
+# Terminal
 
+1. [Conceitos](#conceitos)
+2. [Comandos](#comandos)
+3. [Manipulação de arquivos](#manipulação-de-arquivos)
+4. [Atalhos](#atalhos)
+5. [Diretórios Linux](#diretórios-linux)
+6. [Monitoramento e Qualidade](#monitoramento-e-qualidade)
+7. [Administração de usuários](#administração-de-usuários)
+
+## Conceitos
+
+- Outros nomes para terminal: linha de comando, cmd, console, prompt.
 - Shell: interpretador de comandos, conversa com o kernel. Tipos de shell:
     - Bash
     - ZSH
@@ -7,8 +18,16 @@
 - FHS: Filesystem Hierarchy Standard
 - Montar: disponibilizar para uso
 - PID: Process identification, id de cada processo em execução.
+- Redes de computadores: um ou mais computadores conectados, ex: internet, na minha casa (wifi), etc.
+- IP: endereço; cada elemento conectado na rede vai ter um IP diferente para identificá-lo na rede.
+- Porta: como se fosse o número do apartamento.
+    - Porta de um servidor web: 80
+    - SSH: 22
+- DNS: sistema que traduz a url para o IP (endereço real do servidor que está hospedando a página)
+- Máquina virtual: consome recursos da minha máquina; sem usar interface gráfica, consome menos.
 
-## Comandos básicos
+
+## Comandos
 
 | Comando | Obs |
 | -- | -- |

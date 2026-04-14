@@ -3,6 +3,7 @@
 ## Conceitos
 - Kernel: comunicação entre o hardware e o sistema, é a espinha dorsal
 - Unix: família de sistemas operativos multitarefa e multiutilizador desenvolvida originalmente na década de 1960/1970
+- LTS: "long term support"
 
 ## História
 1983 - Richard Stallman - Criação do projeto GNU (GNU's not UNIX), com objetivo de ser um SO livre. O projeto começou a desenvolver todos os componentes necessários: compilador (GCC), editor de texto (Emacs), shell (Bash) e várias bibliotecas essenciais.
@@ -27,3 +28,12 @@ Distribuições: Linux + bibliotecas + ferramentas em um instalador.
 - Chainguard Wolfi: undistro para rodar containers (é mais enxuta)
 - RedHat: enterprise, ambiente de produção corporativo
 - Amazon Linux: para AWS
+
+## Instalação
+
+- Ir no [ubuntu.com](https://ubuntu.com/)
+- Products -> Ubuntu OS:
+    - Ubuntu Desktop: com ambiente gráfico
+    - Ubuntu Server: utilizado em clouds
+    - Ubunu Pro: para empresas
+    - Ubuntu Core: embedados
