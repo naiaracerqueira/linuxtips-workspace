@@ -3,7 +3,8 @@
 ## Conceitos
 - Kernel: comunicação entre o hardware e o sistema, é a espinha dorsal
 - Unix: família de sistemas operativos multitarefa e multiutilizador desenvolvida originalmente na década de 1960/1970
-- LTS: "long term support"
+- LTS: release de "long term support"
+- SSH (Secure Shell): protocolo de rede criptográfico projetado para permitir acesso remoto seguro e execução de comandos em servidores através de redes não confiáveis. Criptografia de chave pública e privada.
 
 ## História
 1983 - Richard Stallman - Criação do projeto GNU (GNU's not UNIX), com objetivo de ser um SO livre. O projeto começou a desenvolver todos os componentes necessários: compilador (GCC), editor de texto (Emacs), shell (Bash) e várias bibliotecas essenciais.
